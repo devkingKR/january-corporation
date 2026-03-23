@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl:*)",
+      "Bash(npx js-beautify:*)",
+      "Bash(grep:*)",
+      "Bash(python download_resources.py:*)",
+      "Bash(tee:*)",
+      "Bash(chcp:*)",
+      "Bash(python update_html_urls.py:*)"
+    ]
+  }
+}
