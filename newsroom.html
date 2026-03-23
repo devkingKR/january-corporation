@@ -25,7 +25,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 
 <link rel="stylesheet" id="font-awesome-css" href="./newsroom/all.min.css" media="all">
 <link rel="stylesheet" id="simple-line-icons-css" href="./newsroom/simple-line-icons.min.css" media="all">
-<link rel="stylesheet" id="oceanwp-style-css" href="./newsroom/style(1).min.css" media="all">
+<link rel='stylesheet' id='oceanwp-style-css' href='css/oceanwp-style.css' media='all'/>
 <link rel="stylesheet" id="elementor-icons-css" href="./newsroom/elementor-icons.min.css" media="all">
 <link rel="stylesheet" id="elementor-frontend-legacy-css" href="./newsroom/frontend-legacy.min.css" media="all">
 <link rel="stylesheet" id="elementor-frontend-css" href="./newsroom/frontend.min.css" media="all">
@@ -310,6 +310,123 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 				align-items: center;
 				overflow: hidden;
 			}
+
+			/* ========== 모바일 햄버거 메뉴 버튼 ========== */
+			.mobile-menu-toggle {
+				display: none;
+				width: 30px;
+				height: 24px;
+				position: relative;
+				cursor: pointer;
+				z-index: 10001;
+				margin-left: auto;
+			}
+
+			.mobile-menu-toggle span {
+				display: block;
+				position: absolute;
+				height: 3px;
+				width: 100%;
+				background: #ffffff;
+				border-radius: 3px;
+				opacity: 1;
+				left: 0;
+				transform: rotate(0deg);
+				transition: .25s ease-in-out;
+			}
+
+			.mobile-menu-toggle span:nth-child(1) { top: 0px; }
+			.mobile-menu-toggle span:nth-child(2) { top: 10px; }
+			.mobile-menu-toggle span:nth-child(3) { top: 20px; }
+
+			.mobile-menu-toggle.active span:nth-child(1) { top: 10px; transform: rotate(135deg); }
+			.mobile-menu-toggle.active span:nth-child(2) { opacity: 0; left: -60px; }
+			.mobile-menu-toggle.active span:nth-child(3) { top: 10px; transform: rotate(-135deg); }
+
+			/* ========== 모바일 반응형 (768px 이하) ========== */
+			@media screen and (max-width: 768px) {
+				.mobile-menu-toggle { display: block; }
+
+				body.oceanwp-theme #site-header #site-navigation-wrap,
+				#site-header #site-navigation-wrap {
+					position: fixed;
+					top: 70px;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					width: 100%;
+					height: calc(100vh - 70px);
+					background: rgba(0, 0, 0, 0.95);
+					display: none;
+					flex-direction: column;
+					align-items: center;
+					justify-content: flex-start;
+					padding-top: 30px;
+					overflow-y: auto;
+					z-index: 9998;
+				}
+
+				body.mobile-menu-open #site-header #site-navigation-wrap,
+				#site-header #site-navigation-wrap.mobile-menu-active { display: flex !important; }
+
+				body.oceanwp-theme #site-header #full-screen-menu,
+				body.oceanwp-theme #site-header #full-screen-menu-inner,
+				body.oceanwp-theme #site-header #site-navigation,
+				#site-header #full-screen-menu,
+				#site-header #full-screen-menu-inner,
+				#site-header #site-navigation {
+					height: auto !important;
+					max-height: none !important;
+					overflow: visible !important;
+					flex-direction: column;
+					align-items: center;
+					width: 100%;
+				}
+
+				body.oceanwp-theme #site-header #menu-test_top-bar,
+				#site-header #menu-test_top-bar {
+					flex-direction: column;
+					align-items: center;
+					gap: 0;
+					width: 100%;
+					height: auto !important;
+					max-height: none !important;
+					overflow: visible !important;
+				}
+
+				body.oceanwp-theme #site-header #menu-test_top-bar li,
+				#site-header #menu-test_top-bar li {
+					width: 100%;
+					text-align: center;
+					border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+					display: block !important;
+					visibility: visible !important;
+					opacity: 1 !important;
+					height: auto !important;
+				}
+
+				body.oceanwp-theme #site-header #menu-test_top-bar li a,
+				#site-header #menu-test_top-bar li a {
+					padding: 20px 15px;
+					font-size: 16px;
+					display: block !important;
+					color: #ffffff !important;
+				}
+
+				body.oceanwp-theme header#site-header #site-header-inner,
+				#site-header #site-header-inner { justify-content: space-between; }
+
+				body.mobile-menu-open { overflow: hidden; }
+			}
+
+			@media screen and (max-width: 480px) {
+				body.oceanwp-theme #site-header #menu-test_top-bar li a,
+				#site-header #menu-test_top-bar li a { padding: 18px 10px; font-size: 15px; }
+
+				body.oceanwp-theme #site-header #site-logo-inner a img,
+				#site-header #site-logo-inner a img,
+				#site-header .custom-logo { max-height: 32px; }
+			}
 		</style>
 		<!-- OceanWP CSS -->
 <style type="text/css">
@@ -376,23 +493,16 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 												<span class="text-wrap">COMPANY</span>
 											</a>
 										</li>
-										<li class="search-toggle-li">
-											<form action="./index.html" class="header-searchform" aria-label="Search this website">
-												<span class="search-text">
-													Type your search
-													<span>
-														<i></i>
-														<i></i>
-														<i></i>
-													</span>
-												</span>
-												<input aria-label="After typing hit enter to submit search query" type="search" name="s" value="" autocomplete="off"/>
-											</form>
-										</li>
 									</ul>
 								</nav>
 							</div>
 						</div>
+					</div>
+					<!-- 모바일 햄버거 메뉴 버튼 -->
+					<div class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴 열기/닫기">
+						<span></span>
+						<span></span>
+						<span></span>
 					</div>
 					<div class="oceanwp-mobile-menu-icon clr mobile-right">
 						<a href="#mobile-menu-toggle" class="mobile-menu" aria-label="Mobile Menu">
@@ -1247,5 +1357,41 @@ var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false
 <script src="./newsroom/frontend.min.js.다운로드" id="elementor-frontend-js"></script><span id="elementor-device-mode" class="elementor-screen-only"></span>
 <script src="./newsroom/preloaded-modules.min.js.다운로드" id="preloaded-modules-js"></script><svg style="display: none;" class="e-font-icon-svg-symbols"></svg>
 
+<!-- 모바일 메뉴 토글 스크립트 -->
+<script>
+(function() {
+    document.addEventListener('DOMContentLoaded', function() {
+        var toggle = document.getElementById('mobile-menu-toggle');
+        var navWrap = document.getElementById('site-navigation-wrap');
+        var body = document.body;
+
+        if (toggle && navWrap) {
+            toggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                toggle.classList.toggle('active');
+                navWrap.classList.toggle('mobile-menu-active');
+                body.classList.toggle('mobile-menu-open');
+            });
+
+            var menuLinks = navWrap.querySelectorAll('a.menu-link');
+            menuLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    toggle.classList.remove('active');
+                    navWrap.classList.remove('mobile-menu-active');
+                    body.classList.remove('mobile-menu-open');
+                });
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && navWrap.classList.contains('mobile-menu-active')) {
+                    toggle.classList.remove('active');
+                    navWrap.classList.remove('mobile-menu-active');
+                    body.classList.remove('mobile-menu-open');
+                }
+            });
+        }
+    });
+})();
+</script>
 
 </body></html>
