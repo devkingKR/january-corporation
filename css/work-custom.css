@@ -1,3 +1,37 @@
+/* ========== 브라우저 호환성 (Chrome/Edge 일관성) ========== */
+html {
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-width: 100%;
+}
+
+/* 컨테이너 너비 통일 */
+.container,
+.elementor-section-boxed > .elementor-container {
+    max-width: 1200px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+}
+
+/* 전체 너비 섹션 */
+.elementor-section-full_width,
+.elementor-section-full_width > .elementor-container {
+    max-width: 100%;
+    width: 100%;
+}
+
 /* ========== HISTORY 텍스트/이미지 정렬 ========== */
 .entry {
     font-size: 1rem;

@@ -402,6 +402,75 @@ class TestHarness:
                 except Exception as e:
                     print(f"    🔴 {filename}: 오류")
 
+    def test_browser_compatibility(self):
+        """브라우저 호환성 검사"""
+        print(bold("\n🌐 브라우저 호환성 검사"))
+
+        # 커스텀 CSS 파일 목록
+        custom_css_files = [
+            'css/index-custom.css',
+            'css/company-custom.css',
+            'css/business-custom.css',
+            'css/work-custom.css',
+            'css/newsroom-custom.css',
+            'css/contact-custom.css'
+        ]
+
+        required_rules = {
+            'text-size-adjust': 'text-size-adjust: 100%',
+            'body width': 'width: 100%',
+            'container max-width': 'max-width: 1200px',
+            'box-sizing': 'box-sizing: border-box'
+        }
+
+        all_pass = True
+        missing_rules = []
+
+        for css_file in custom_css_files:
+            css_path = BASE_DIR / css_file
+            if not css_path.exists():
+                self.add_result('호환성', css_file, 'fail', '파일 없음')
+                print(fail(f"{css_file}: 파일 없음"))
+                all_pass = False
+                continue
+
+            content = css_path.read_text(encoding='utf-8')
+            file_issues = []
+
+            for rule_name, rule_pattern in required_rules.items():
+                if rule_pattern not in content:
+                    file_issues.append(rule_name)
+
+            if file_issues:
+                missing_rules.extend([(css_file, issue) for issue in file_issues])
+
+        if missing_rules:
+            # 고유한 누락 규칙만 표시
+            unique_missing = set([rule for _, rule in missing_rules])
+            self.add_result('호환성', '브라우저 CSS', 'warn', f'일부 규칙 누락: {", ".join(unique_missing)}')
+            print(warn(f"일부 CSS 규칙 누락: {', '.join(unique_missing)}"))
+            all_pass = False
+        else:
+            self.add_result('호환성', '브라우저 CSS', 'pass', '모든 호환성 CSS 적용됨')
+            print(ok("모든 브라우저 호환성 CSS 적용됨"))
+
+        # 추가 검사: Elementor 컨테이너 통일 여부
+        has_elementor_fix = False
+        for css_file in custom_css_files:
+            css_path = BASE_DIR / css_file
+            if css_path.exists():
+                content = css_path.read_text(encoding='utf-8')
+                if '.elementor-section-boxed' in content and 'max-width: 1200px' in content:
+                    has_elementor_fix = True
+                    break
+
+        if has_elementor_fix:
+            self.add_result('호환성', 'Elementor 컨테이너', 'pass', '컨테이너 너비 통일됨 (1200px)')
+            print(ok("Elementor 컨테이너 너비 통일됨 (1200px)"))
+        else:
+            self.add_result('호환성', 'Elementor 컨테이너', 'warn', 'Elementor 컨테이너 너비 불일치 가능')
+            print(warn("Elementor 컨테이너 너비 확인 필요"))
+
     def test_seo(self):
         """SEO 검사"""
         print(bold("\n🔍 SEO 검사"))
@@ -450,6 +519,7 @@ class TestHarness:
         self.test_images()
         self.test_resources()
         self.test_performance()
+        self.test_browser_compatibility()
         self.test_seo()
 
         # 결과 요약
