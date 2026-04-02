@@ -471,6 +471,95 @@ class TestHarness:
             self.add_result('호환성', 'Elementor 컨테이너', 'warn', 'Elementor 컨테이너 너비 불일치 가능')
             print(warn("Elementor 컨테이너 너비 확인 필요"))
 
+    def test_side_effects(self):
+        """사이드 이펙트 검사"""
+        print(bold("\n⚠️  사이드 이펙트 검사"))
+
+        issues = []
+
+        # 1. robots.txt 검사 - Disallow: / 가 있으면 위험
+        robots_path = BASE_DIR / 'robots.txt'
+        if robots_path.exists():
+            content = robots_path.read_text(encoding='utf-8')
+            if 'Disallow: /' in content and 'Disallow: /wp-' not in content:
+                # Disallow: / 만 있으면 전체 차단
+                lines = content.split('\n')
+                for line in lines:
+                    line = line.strip()
+                    if line == 'Disallow: /':
+                        issues.append("robots.txt: 전체 크롤링 차단됨 (Disallow: /)")
+                        break
+            if 'Allow: /' in content:
+                self.add_result('사이드이펙트', 'robots.txt', 'pass', '크롤링 허용 설정 정상')
+                print(ok("robots.txt: 크롤링 허용 설정 정상"))
+        else:
+            self.add_result('사이드이펙트', 'robots.txt', 'warn', 'robots.txt 파일 없음')
+            print(warn("robots.txt 파일 없음"))
+
+        # 2. sitemap.xml 검사
+        sitemap_path = BASE_DIR / 'sitemap.xml'
+        if sitemap_path.exists():
+            content = sitemap_path.read_text(encoding='utf-8')
+            url_count = content.count('<url>')
+            if url_count >= len(HTML_FILES):
+                self.add_result('사이드이펙트', 'sitemap.xml', 'pass', f'{url_count}개 URL 등록됨')
+                print(ok(f"sitemap.xml: {url_count}개 URL 등록됨"))
+            else:
+                self.add_result('사이드이펙트', 'sitemap.xml', 'warn', f'일부 페이지 누락 가능 ({url_count}개)')
+                print(warn(f"sitemap.xml: 일부 페이지 누락 가능 ({url_count}개)"))
+        else:
+            self.add_result('사이드이펙트', 'sitemap.xml', 'warn', 'sitemap.xml 파일 없음')
+            print(warn("sitemap.xml 파일 없음"))
+
+        # 3. 잘못된 JS 경로 검사 (.다운로드 파일)
+        bad_js_refs = []
+        for filename in HTML_FILES:
+            filepath = BASE_DIR / filename
+            if filepath.exists():
+                content = filepath.read_text(encoding='utf-8')
+                if '.다운로드' in content:
+                    bad_js_refs.append(filename)
+
+        if bad_js_refs:
+            self.add_result('사이드이펙트', 'JS 경로', 'fail', f'잘못된 JS 경로: {", ".join(bad_js_refs)}')
+            print(fail(f"잘못된 JS 경로 발견: {', '.join(bad_js_refs)}"))
+        else:
+            self.add_result('사이드이펙트', 'JS 경로', 'pass', '모든 JS 경로 정상')
+            print(ok("모든 JS 경로 정상"))
+
+        # 4. 인라인 스타일 급증 검사 (10개 초과 시 경고)
+        high_inline_files = []
+        for filename in HTML_FILES:
+            filepath = BASE_DIR / filename
+            if filepath.exists():
+                content = filepath.read_text(encoding='utf-8')
+                inline_count = content.count('style="')
+                if inline_count > 20:
+                    high_inline_files.append(f"{filename}({inline_count}개)")
+
+        if high_inline_files:
+            self.add_result('사이드이펙트', '인라인 스타일', 'warn', f'인라인 스타일 과다: {", ".join(high_inline_files)}')
+            print(warn(f"인라인 스타일 과다: {', '.join(high_inline_files)}"))
+        else:
+            self.add_result('사이드이펙트', '인라인 스타일', 'pass', '인라인 스타일 적정 수준')
+            print(ok("인라인 스타일 적정 수준"))
+
+        # 5. canonical URL 일관성 검사
+        canonical_issues = []
+        for filename in HTML_FILES:
+            filepath = BASE_DIR / filename
+            if filepath.exists():
+                content = filepath.read_text(encoding='utf-8')
+                if 'rel="canonical"' not in content:
+                    canonical_issues.append(filename)
+
+        if canonical_issues:
+            self.add_result('사이드이펙트', 'canonical', 'warn', f'canonical 누락: {", ".join(canonical_issues)}')
+            print(warn(f"canonical 링크 누락: {', '.join(canonical_issues)}"))
+        else:
+            self.add_result('사이드이펙트', 'canonical', 'pass', '모든 페이지 canonical 설정됨')
+            print(ok("모든 페이지 canonical 설정됨"))
+
     def test_seo(self):
         """SEO 검사"""
         print(bold("\n🔍 SEO 검사"))
@@ -499,6 +588,14 @@ class TestHarness:
             if 'rel="canonical"' not in content:
                 issues.append("canonical 링크 누락")
 
+            # Open Graph
+            if 'og:title' not in content:
+                issues.append("Open Graph 누락")
+
+            # keywords
+            if 'meta name="keywords"' not in content.lower():
+                issues.append("keywords 메타태그 누락")
+
             if issues:
                 self.add_result('SEO', filename, 'warn', ', '.join(issues))
                 print(warn(f"{filename}: {', '.join(issues)}"))
@@ -520,6 +617,7 @@ class TestHarness:
         self.test_resources()
         self.test_performance()
         self.test_browser_compatibility()
+        self.test_side_effects()
         self.test_seo()
 
         # 결과 요약
