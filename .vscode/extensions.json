@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "formulahendry.auto-rename-tag",
+    "ecmel.vscode-html-css",
+    "bradlc.vscode-tailwindcss",
+    "editorconfig.editorconfig",
+    "esbenp.prettier-vscode",
+    "ritwickdey.liveserver",
+    "ms-python.python",
+    "github.copilot"
+  ]
+}
