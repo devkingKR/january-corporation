@@ -1,0 +1,1087 @@
+/* ========== HISTORY 텍스트/이미지 정렬 ========== */
+.entry {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.entry h2, .entry h3 {
+    margin: 1.2rem 0 0.6rem;
+}
+
+.entry h3 {
+    text-align: right;
+}
+
+.entry p {
+    margin: 0.6rem 0;
+    text-indent: 0.8rem;
+    line-height: 1.7;
+}
+
+.entry p:has(img) {
+    text-indent: 0;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.entry p img {
+    max-width: 340px;
+    width: auto;
+    height: auto;
+    display: inline-block;
+    margin-left: 1rem;
+    vertical-align: middle;
+}
+
+/* ========== 헤더 상단 고정 ========== */
+body.oceanwp-theme header#site-header,
+body header#site-header,
+#site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    background-color: #000000;
+    height: 70px;
+    min-height: 70px;
+    max-height: 70px;
+    overflow: hidden;
+}
+
+body.oceanwp-theme header#site-header #site-header-inner,
+body header#site-header #site-header-inner,
+#site-header #site-header-inner {
+    height: 70px;
+    padding: 0 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 100%;
+    gap: 60px;
+}
+
+/* 로고 왼쪽 끝 배치 */
+body.oceanwp-theme #site-header #site-logo,
+body.oceanwp-theme #site-header #site-logo-inner,
+#site-header #site-logo,
+#site-header #site-logo-inner {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    margin: 0;
+    padding: 0;
+}
+
+body.oceanwp-theme #site-header #site-logo-inner a img,
+body.oceanwp-theme #site-header .custom-logo,
+#site-header #site-logo-inner a img,
+#site-header .custom-logo {
+    max-height: 40px;
+    width: auto;
+    height: auto;
+}
+
+/* 고정 헤더로 인해 가려지는 콘텐츠 보정 */
+body.oceanwp-theme #main,
+#main {
+    padding-top: 70px;
+}
+
+/* 햄버거 버튼, 닫기 버튼 및 불필요한 요소 숨기기 */
+body.oceanwp-theme .menu-bar-wrap,
+body.oceanwp-theme .menu-bar-inner,
+body.oceanwp-theme .menu-bar,
+body.oceanwp-theme .ham,
+body.oceanwp-theme .oceanwp-mobile-menu-icon,
+body.oceanwp-theme .mobile-menu-close,
+body.oceanwp-theme .oceanwp-close-text,
+body.oceanwp-theme #mobile-dropdown,
+body.oceanwp-theme #top-bar-wrap,
+body.oceanwp-theme #site-header .menu-bar-wrap,
+body.oceanwp-theme #site-header .oceanwp-mobile-menu-icon,
+.menu-bar-wrap,
+.menu-bar-inner,
+.menu-bar,
+.ham,
+.oceanwp-mobile-menu-icon,
+.mobile-menu-close,
+.oceanwp-close-text,
+#mobile-dropdown,
+#top-bar-wrap,
+#site-header .menu-bar-wrap,
+#site-header .oceanwp-mobile-menu-icon {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+/* 메뉴 항상 표시 */
+body.oceanwp-theme #site-header #full-screen-menu,
+body.oceanwp-theme #site-header.full_screen-header #full-screen-menu,
+#site-header #full-screen-menu,
+#site-header.full_screen-header #full-screen-menu {
+    display: flex;
+    position: static;
+    background: transparent;
+    opacity: 1;
+    visibility: visible;
+    height: 70px;
+    width: auto;
+    overflow: hidden;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+body.oceanwp-theme #site-header #full-screen-menu-inner,
+body.oceanwp-theme #site-header.full_screen-header #full-screen-menu-inner,
+#site-header #full-screen-menu-inner,
+#site-header.full_screen-header #full-screen-menu-inner {
+    display: flex;
+    position: static;
+    transform: none;
+    overflow: hidden;
+    align-items: center;
+    justify-content: flex-start;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+body.oceanwp-theme #site-header #site-navigation,
+body.oceanwp-theme #site-header.full_screen-header #site-navigation,
+body.oceanwp-theme #site-header #site-navigation.main-navigation,
+#site-header #site-navigation,
+#site-header.full_screen-header #site-navigation,
+#site-header #site-navigation.main-navigation {
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 풀스크린 메뉴 오버레이 제거 */
+body.oceanwp-theme #site-header.full_screen-header #full-screen-menu,
+body.oceanwp-theme.fs-dropdown-menu-active #full-screen-menu,
+#site-header.full_screen-header #full-screen-menu {
+    position: static;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    width: auto;
+    height: 70px;
+    background: transparent;
+    transform: none;
+}
+
+/* 메뉴 가로 배치 */
+body.oceanwp-theme #site-header #menu-test_top-bar,
+#site-header #menu-test_top-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 50px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body.oceanwp-theme #site-header #menu-test_top-bar li,
+#site-header #menu-test_top-bar li {
+    margin: 0;
+    padding: 0;
+}
+
+/* 메뉴 텍스트 흰색 */
+body.oceanwp-theme #site-header #site-navigation-wrap #full-screen-menu #site-navigation #menu-test_top-bar li a,
+body.oceanwp-theme #site-header #site-navigation-wrap #full-screen-menu #site-navigation #menu-test_top-bar li a.menu-link,
+body.oceanwp-theme #site-header #site-navigation-wrap #full-screen-menu #site-navigation #menu-test_top-bar li a span,
+body.oceanwp-theme #site-header #menu-test_top-bar li a,
+body.oceanwp-theme #site-header #menu-test_top-bar li a.menu-link,
+body.oceanwp-theme #site-header #menu-test_top-bar li a span.text-wrap,
+#site-header #menu-test_top-bar li a,
+#site-header #menu-test_top-bar li a.menu-link,
+#site-header #menu-test_top-bar li a span.text-wrap {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    padding: 10px 0;
+    display: block;
+    transition: opacity 0.3s ease;
+    background: transparent;
+}
+
+body.oceanwp-theme #site-header #menu-test_top-bar li a:hover,
+body.oceanwp-theme #site-header #menu-test_top-bar li a:hover span,
+#site-header #menu-test_top-bar li a:hover,
+#site-header #menu-test_top-bar li a:hover span {
+    opacity: 0.7;
+    color: #ffffff;
+}
+
+/* 클릭 시 흰색 테두리 제거 */
+body.oceanwp-theme #site-header #menu-test_top-bar li a:focus,
+body.oceanwp-theme #site-header #menu-test_top-bar li a:active,
+body.oceanwp-theme #site-header #menu-test_top-bar li a:focus span,
+body.oceanwp-theme #site-header #menu-test_top-bar li a:active span,
+#site-header #menu-test_top-bar li a:focus,
+#site-header #menu-test_top-bar li a:active,
+#site-header #menu-test_top-bar li a:focus span,
+#site-header #menu-test_top-bar li a:active span,
+#site-header #menu-test_top-bar li a:focus-visible,
+#site-header #menu-test_top-bar li a:focus-within,
+#site-header #menu-test_top-bar li a *:focus,
+#site-header #menu-test_top-bar li a *:active {
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    color: #ffffff;
+    opacity: 0.7;
+}
+
+/* 전체 헤더 영역의 모든 요소에서 outline 제거 */
+#site-header *,
+#site-header *:focus,
+#site-header *:active,
+#site-header *:focus-visible,
+#site-header a,
+#site-header a:focus,
+#site-header a:active,
+#site-header button,
+#site-header button:focus,
+#site-header button:active {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* 검색 폼 숨기기 */
+body.oceanwp-theme #site-header .search-toggle-li,
+#site-header .search-toggle-li {
+    display: none;
+}
+
+/* 네비게이션 래퍼 */
+body.oceanwp-theme #site-header #site-navigation-wrap,
+#site-header #site-navigation-wrap {
+    display: flex;
+    position: static;
+    align-items: center;
+    justify-content: flex-start;
+    height: 70px;
+    overflow: hidden;
+    flex: 1;
+}
+
+body.oceanwp-theme #site-header #full-screen-menu,
+body.oceanwp-theme #site-header #full-screen-menu-inner,
+body.oceanwp-theme #site-header #site-navigation,
+#site-header #full-screen-menu,
+#site-header #full-screen-menu-inner,
+#site-header #site-navigation {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* ========== 모바일 햄버거 메뉴 버튼 ========== */
+.mobile-menu-toggle {
+    display: none;
+    width: 30px;
+    height: 24px;
+    position: relative;
+    cursor: pointer;
+    z-index: 10001;
+    margin-left: auto;
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 3px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+}
+
+.mobile-menu-toggle span:nth-child(1) { top: 0px; }
+.mobile-menu-toggle span:nth-child(2) { top: 10px; }
+.mobile-menu-toggle span:nth-child(3) { top: 20px; }
+
+.mobile-menu-toggle.active span:nth-child(1) { top: 10px; transform: rotate(135deg); }
+.mobile-menu-toggle.active span:nth-child(2) { opacity: 0; left: -60px; }
+.mobile-menu-toggle.active span:nth-child(3) { top: 10px; transform: rotate(-135deg); }
+
+/* ========== 모바일 반응형 (768px 이하) ========== */
+@media screen and (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    body.oceanwp-theme #site-header #site-navigation-wrap,
+    #site-header #site-navigation-wrap {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: rgba(0, 0, 0, 0.95);
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 30px;
+        overflow-y: auto;
+        z-index: 9998;
+    }
+
+    body.mobile-menu-open #site-header #site-navigation-wrap,
+    #site-header #site-navigation-wrap.mobile-menu-active {
+        display: flex !important;
+    }
+
+    body.oceanwp-theme #site-header #full-screen-menu,
+    body.oceanwp-theme #site-header #full-screen-menu-inner,
+    body.oceanwp-theme #site-header #site-navigation,
+    #site-header #full-screen-menu,
+    #site-header #full-screen-menu-inner,
+    #site-header #site-navigation {
+        height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    body.oceanwp-theme #site-header #menu-test_top-bar,
+    #site-header #menu-test_top-bar {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        width: 100%;
+        height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+    }
+
+    body.oceanwp-theme #site-header #menu-test_top-bar li,
+    #site-header #menu-test_top-bar li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        height: auto !important;
+    }
+
+    body.oceanwp-theme #site-header #menu-test_top-bar li a,
+    #site-header #menu-test_top-bar li a {
+        padding: 20px 15px;
+        font-size: 16px;
+        display: block !important;
+        color: #ffffff !important;
+    }
+
+    body.oceanwp-theme header#site-header #site-header-inner,
+    #site-header #site-header-inner {
+        justify-content: space-between;
+    }
+
+    body.mobile-menu-open {
+        overflow: hidden;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body.oceanwp-theme #site-header #menu-test_top-bar li a,
+    #site-header #menu-test_top-bar li a {
+        padding: 18px 10px;
+        font-size: 15px;
+    }
+
+    body.oceanwp-theme #site-header #site-logo-inner a img,
+    #site-header #site-logo-inner a img,
+    #site-header .custom-logo {
+        max-height: 32px;
+    }
+}
+
+/* ========== 컨텐츠 영역 스타일 ========== */
+.entry.clr {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    line-height: 1.8;
+}
+
+/* 메인 제목 스타일 */
+.entry.clr h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    margin-top: 60px;
+    color: #000000;
+    line-height: 1.3;
+}
+
+.entry.clr h1:first-child {
+    margin-top: 0;
+}
+
+/* 서브 제목 스타일 */
+.entry.clr h2 {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    margin-top: 40px;
+    color: #333333;
+    line-height: 1.6;
+}
+
+.entry.clr h3 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    margin-top: 40px;
+    color: #000000;
+}
+
+.entry.clr h5 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    margin-top: 30px;
+    color: #000000;
+    text-align: center;
+}
+
+/* 인용구 스타일 */
+.entry.clr blockquote {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 40px;
+    margin: 40px 0;
+    border-left: none;
+    border-radius: 10px;
+}
+
+.entry.clr blockquote h1 {
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* 단락 스타일 */
+.entry.clr p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #555555;
+    line-height: 1.8;
+}
+
+.entry.clr p strong,
+.entry.clr p b {
+    color: #000000;
+    font-weight: 600;
+}
+
+/* 이미지 스타일 */
+.entry.clr img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 20px 0;
+    display: block;
+}
+
+/* Features 섹션 */
+.entry.clr h5 + p {
+    text-align: center;
+}
+
+.entry.clr h5 + p + p img {
+    margin: 20px auto;
+}
+
+/* History 섹션 스타일 */
+.entry.clr h3[style*="text-align: right"] {
+    border-bottom: 3px solid #667eea;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+/* 연락처 및 소셜 미디어 */
+.entry.clr ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.entry.clr ul li {
+    padding: 10px 0;
+    font-size: 16px;
+    color: #555555;
+}
+
+.entry.clr ul li a {
+    color: #667eea;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.entry.clr ul li a:hover {
+    color: #764ba2;
+}
+
+/* 푸터 텍스트 */
+.entry.clr p:last-of-type {
+    text-align: center;
+    color: #999999;
+    font-size: 14px;
+    margin-top: 60px;
+    border-top: 1px solid #eeeeee;
+    padding-top: 30px;
+}
+
+/* 섹션 간격 조정 */
+.entry.clr h1 + h2 {
+    margin-top: 20px;
+}
+
+.entry.clr h2 + blockquote {
+    margin-top: 0;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .entry.clr {
+        padding: 40px 15px;
+    }
+
+    .entry.clr h1 {
+        font-size: 32px;
+        margin-bottom: 30px;
+    }
+
+    .entry.clr blockquote h1 {
+        font-size: 24px;
+    }
+
+    .entry.clr h2 {
+        font-size: 20px;
+    }
+
+    .entry.clr h3 {
+        font-size: 24px;
+    }
+}
+
+/* 특정 콘텐츠 영역 정리 */
+.entry.clr br + br + br {
+    display: none;
+}
+
+/* 연속된 빈 단락 숨기기 */
+.entry.clr p:empty {
+    display: none;
+}
+
+/* About Us 섹션 강조 */
+.entry.clr > h1:first-child {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #000000;
+    display: inline-block;
+    width: 100%;
+}
+
+/* 링크 스타일 */
+.entry.clr a {
+    color: #667eea;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.entry.clr a:hover {
+    color: #764ba2;
+    text-decoration: underline;
+}
+
+.entry.clr h2 a,
+.entry.clr h3 a {
+    color: inherit;
+}
+
+.entry.clr h2 a:hover,
+.entry.clr h3 a:hover {
+    color: #667eea;
+}
+
+/* Know-How 등 feature 카드 스타일 */
+.entry.clr h5 {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+    padding: 15px 30px;
+    border-radius: 50px;
+    display: inline-block;
+    margin: 40px auto 20px;
+}
+
+/* History 타임라인 개선 */
+.entry.clr h3[style*="text-align: right"] {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+    padding: 10px 30px;
+    border-radius: 30px;
+    display: block;
+    text-align: right;
+    border-bottom: none;
+    margin-bottom: 30px;
+}
+
+.entry.clr h3[style*="text-align: right"]::after {
+    content: "";
+    display: inline-block;
+}
+
+/* 히스토리 항목 스타일 개선 */
+.entry.clr h3 + p {
+    clear: both;
+    position: relative;
+}
+
+/* 이미지 캡션 스타일 */
+.entry.clr p img + br {
+    display: none;
+}
+
+/* 섹션별 여백 개선 */
+.entry.clr > h1 {
+    margin-top: 80px;
+    padding-top: 40px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.entry.clr > h1:first-of-type {
+    border-top: none;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+/* 연속된 History 항목 간격 */
+.entry.clr h3 + p + p {
+    position: relative;
+    margin-top: 10px;
+}
+
+/* 이미지가 있는 항목 하단 여백 */
+.entry.clr p:has(img) {
+    margin-bottom: 30px;
+}
+
+/* Contact 섹션 */
+.entry.clr h2 + blockquote {
+    margin-top: 0;
+}
+
+/* CI LOGO 섹션 개선 */
+.entry.clr .ci-logo-section {
+    background: linear-gradient(135deg, #f8f9ff 0%, #faf6ff 100%);
+    padding: 30px;
+    border-radius: 15px;
+    margin: 80px 0 40px;
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.1);
+}
+
+.entry.clr .ci-logo-image {
+    text-align: center;
+    margin: 40px 0;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+}
+
+.entry.clr .ci-logo-image img {
+    margin: 20px auto;
+    max-width: 500px;
+}
+
+/* 소셜 미디어 링크 버튼 스타일 */
+.entry.clr .social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 25px;
+    margin: 10px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff !important;
+    border-radius: 25px;
+    text-decoration: none !important;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.entry.clr .social-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+.entry.clr .social-link i {
+    font-size: 20px;
+}
+
+/* 불필요한 <br> 태그 숨기기 */
+.entry.clr h5 + p br {
+    display: none;
+}
+
+/* K-Content IP Powerhouse 섹션 */
+.entry.clr .powerhouse-section {
+    display: block;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+    margin: 80px auto 20px;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #f8f9ff 0%, #faf6ff 100%);
+    border-radius: 20px;
+    color: #000000;
+    text-decoration: none;
+    line-height: 1.5;
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.1);
+    transition: all 0.3s ease;
+}
+
+.entry.clr .powerhouse-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+}
+
+.entry.clr .powerhouse-subtitle {
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+    color: #666666;
+    text-decoration: none;
+    margin-bottom: 80px;
+    line-height: 1.8;
+    padding: 0 20px;
+}
+
+.entry.clr .powerhouse-subtitle:hover {
+    color: #667eea;
+}
+
+/* Reach us through 섹션 */
+.entry.clr .reach-us {
+    font-size: 32px;
+    font-weight: 700;
+    margin-top: 80px;
+    margin-bottom: 30px;
+    text-align: left;
+    color: #000000;
+}
+
+.entry.clr .reach-us-list {
+    background: linear-gradient(135deg, #f8f9ff 0%, #faf6ff 100%);
+    padding: 40px;
+    border-radius: 15px;
+    margin: 30px 0 50px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.entry.clr .reach-us-list li {
+    padding: 18px 0;
+    font-size: 18px;
+    border-bottom: 1px solid rgba(102, 126, 234, 0.15);
+    color: #333333;
+}
+
+.entry.clr .reach-us-list li:last-child {
+    border-bottom: none;
+}
+
+.entry.clr .reach-us-list li a {
+    color: #667eea;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.entry.clr .reach-us-list li a:hover {
+    color: #764ba2;
+    text-decoration: underline;
+}
+
+/* 연락처 아이콘 추가 */
+.entry.clr .reach-us-list li:nth-child(1)::before {
+    content: "📍 ";
+    margin-right: 10px;
+}
+
+.entry.clr .reach-us-list li:nth-child(2)::before {
+    content: "📞 ";
+    margin-right: 10px;
+}
+
+.entry.clr .reach-us-list li:nth-child(3)::before {
+    content: "✉️ ";
+    margin-right: 10px;
+}
+
+/* Social Networks 섹션 */
+.entry.clr .social-networks {
+    font-size: 32px;
+    font-weight: 700;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    text-align: left;
+    color: #000000;
+}
+
+.entry.clr .social-networks-list {
+    background: linear-gradient(135deg, #f8f9ff 0%, #faf6ff 100%);
+    padding: 50px 40px 60px;
+    border-radius: 15px;
+    margin: 30px 0 50px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+.entry.clr .social-networks-list li {
+    padding: 0;
+    border-bottom: none;
+    list-style: none;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.entry.clr .social-networks-list li a {
+    display: inline-flex;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff !important;
+    font-size: 36px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    position: relative;
+    text-decoration: none;
+}
+
+.entry.clr .social-networks-list li a:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+.entry.clr .social-networks-list li a i {
+    color: #ffffff;
+    font-size: 36px;
+}
+
+.entry.clr .social-networks-list li a br {
+    display: none;
+}
+
+/* 소셜 미디어 아이콘 설명 툴팁 */
+.entry.clr .social-networks-list li:nth-child(1) a::after {
+    content: "YouTube";
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.entry.clr .social-networks-list li:nth-child(2) a::after {
+    content: "KakaoTalk";
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.entry.clr .social-networks-list li:nth-child(3) a::after {
+    content: "TikTok";
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.entry.clr .social-networks-list li a:hover::after {
+    opacity: 1;
+    bottom: -45px;
+}
+
+/* 저작권 및 푸터 영역 */
+.entry.clr > p:nth-last-child(2) {
+    text-align: center;
+    color: #999999;
+    font-size: 14px;
+    margin-top: 80px;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    border-top: 2px solid #e0e0e0;
+    font-weight: 500;
+}
+
+.entry.clr > p:last-child {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.entry.clr > p:last-child a {
+    display: inline-block;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.entry.clr > p:last-child a:hover {
+    opacity: 1;
+}
+
+/* 반응형 개선 - 태블릿 */
+@media (max-width: 1024px) {
+    .entry.clr {
+        padding: 50px 30px;
+    }
+}
+
+/* 반응형 개선 - 모바일 */
+@media (max-width: 768px) {
+    .entry.clr .powerhouse-section {
+        font-size: 28px;
+        padding: 30px 15px;
+    }
+
+    .entry.clr .powerhouse-subtitle {
+        font-size: 18px;
+    }
+
+    .entry.clr .reach-us,
+    .entry.clr .social-networks {
+        font-size: 28px;
+    }
+
+    .entry.clr .reach-us-list,
+    .entry.clr .social-networks-list {
+        padding: 25px;
+    }
+
+    .entry.clr .social-networks-list {
+        gap: 15px;
+    }
+
+    .entry.clr .social-networks-list li a {
+        width: 65px;
+        height: 65px;
+        font-size: 28px;
+    }
+
+    .entry.clr .social-networks-list li a i {
+        font-size: 28px;
+    }
+
+    .entry.clr .social-link {
+        font-size: 14px;
+        padding: 10px 20px;
+        margin: 5px;
+    }
+
+    .entry.clr .social-link i {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .entry.clr h1 {
+        font-size: 28px;
+    }
+
+    .entry.clr h2 {
+        font-size: 18px;
+    }
+
+    .entry.clr blockquote {
+        padding: 25px;
+    }
+
+    .entry.clr blockquote h1 {
+        font-size: 20px;
+    }
+}
+
+/* 스크롤 애니메이션 준비 */
+.entry.clr > * {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
