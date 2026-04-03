@@ -1,3 +1,63 @@
+/* ========== 메인 히어로 섹션 (전체 너비) ========== */
+.elementor-element-d7aa797 {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin-left: calc(-50vw + 50%) !important;
+    margin-right: calc(-50vw + 50%) !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+}
+
+.elementor-element-d7aa797 > .elementor-container {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0 !important;
+}
+
+.elementor-element-d7aa797 .elementor-column-wrap,
+.elementor-element-d7aa797 .elementor-widget-wrap {
+    padding: 0 !important;
+}
+
+.elementor-element-d7aa797 .elementor-image {
+    text-align: center;
+}
+
+.elementor-element-d7aa797 .elementor-image img {
+    max-width: 300px;
+    margin: 100px auto !important;
+}
+
+/* ========== WORKS/BUSINESS 카드 섹션 중앙 정렬 ========== */
+/* elementor-section-stretched 인라인 스타일 무시 */
+section.elementor-element-1709c2e6.elementor-section-stretched,
+section[data-id="1709c2e6"].elementor-section-stretched {
+    width: 100% !important;
+    left: 0 !important;
+    max-width: 100% !important;
+}
+
+section.elementor-element-1709c2e6 > .elementor-container,
+section[data-id="1709c2e6"] > .elementor-container {
+    max-width: 1200px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100% !important;
+}
+
+section.elementor-element-1709c2e6 .elementor-row,
+section[data-id="1709c2e6"] .elementor-row {
+    max-width: 1200px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100% !important;
+}
+
+section.elementor-element-1709c2e6 .elementor-col-50,
+section[data-id="1709c2e6"] .elementor-col-50 {
+    max-width: 600px !important;
+}
+
 /* ========== 모던 폰트 (갤럭시코퍼레이션 스타일) ========== */
 body, html {
     font-family: 'Montserrat', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -46,6 +106,53 @@ body {
 .elementor-section-full_width > .elementor-container {
     max-width: 100%;
     width: 100%;
+}
+
+/* ========== 아이콘 박스 정렬 (KNOW-HOW, ONE-STOP 등) ========== */
+.elementor-inner-section .elementor-row {
+    display: flex !important;
+    flex-wrap: wrap;
+    align-items: stretch !important;
+}
+
+.elementor-inner-section .elementor-row > .elementor-column {
+    display: flex !important;
+    flex-direction: column;
+}
+
+.elementor-inner-section .elementor-column-wrap {
+    flex: 1;
+    display: flex !important;
+    flex-direction: column;
+}
+
+.elementor-inner-section .elementor-widget-wrap {
+    flex: 1;
+    display: flex !important;
+    flex-direction: column;
+}
+
+.elementor-inner-section .elementor-widget-icon-box {
+    flex: 1;
+    display: flex !important;
+    flex-direction: column;
+}
+
+.elementor-inner-section .elementor-widget-icon-box .elementor-widget-container {
+    flex: 1;
+    display: flex !important;
+    flex-direction: column;
+}
+
+.elementor-inner-section .elementor-icon-box-wrapper {
+    flex: 1;
+    display: flex !important;
+    flex-direction: column;
+    height: 100%;
+}
+
+.elementor-inner-section .elementor-icon-box-content {
+    flex: 1;
 }
 
 /* ========== 하이브리드 정렬 (제목 중앙, 본문 왼쪽) ========== */
@@ -254,6 +361,7 @@ body.oceanwp-theme #site-header #menu-test_top-bar,
 #site-header #menu-test_top-bar {
     display: flex;
     flex-direction: row;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: flex-start;
     gap: 50px;
@@ -266,6 +374,8 @@ body.oceanwp-theme #site-header #menu-test_top-bar li,
 #site-header #menu-test_top-bar li {
     margin: 0;
     padding: 0;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 /* 메뉴 텍스트 흰색 */
@@ -395,6 +505,20 @@ body.oceanwp-theme #site-header #site-navigation,
 .mobile-menu-toggle.active span:nth-child(1) { top: 7px; transform: rotate(45deg); }
 .mobile-menu-toggle.active span:nth-child(2) { opacity: 0; }
 .mobile-menu-toggle.active span:nth-child(3) { top: 7px; transform: rotate(-45deg); }
+
+/* ========== 태블릿 반응형 (769px ~ 1024px) ========== */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    body.oceanwp-theme #site-header #menu-test_top-bar,
+    #site-header #menu-test_top-bar {
+        gap: 25px;
+    }
+
+    body.oceanwp-theme #site-header #menu-test_top-bar li a,
+    #site-header #menu-test_top-bar li a {
+        font-size: 12px;
+        letter-spacing: 0.5px;
+    }
+}
 
 /* ========== 모바일 반응형 (768px 이하) ========== */
 @media screen and (max-width: 768px) {
