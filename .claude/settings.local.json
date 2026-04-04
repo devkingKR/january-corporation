@@ -7,7 +7,8 @@
       "Bash(python download_resources.py:*)",
       "Bash(tee:*)",
       "Bash(chcp:*)",
-      "Bash(python update_html_urls.py:*)"
+      "Bash(python update_html_urls.py:*)",
+      "Bash(node -e ':*)"
     ]
   }
 }

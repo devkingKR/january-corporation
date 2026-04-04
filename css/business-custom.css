@@ -66,6 +66,27 @@ body {
     text-align: left;
 }
 
+/* 서비스 카드 타이틀 높이 정렬 — 3개 타이틀 모두 min-height로 border 위치 통일 */
+/* line-height:44px 기준 2줄(K-Contents Creation) = 88px */
+.elementor-226 .elementor-element.elementor-element-2a973b0e .elementor-icon-box-title,
+.elementor-226 .elementor-element.elementor-element-54e2b184 .elementor-icon-box-title,
+.elementor-226 .elementor-element.elementor-element-7854c1a2 .elementor-icon-box-title {
+    min-height: 88px;
+}
+
+@media (max-width: 768px) {
+    .elementor-226 .elementor-element.elementor-element-2a973b0e .elementor-icon-box-title,
+    .elementor-226 .elementor-element.elementor-element-54e2b184 .elementor-icon-box-title,
+    .elementor-226 .elementor-element.elementor-element-7854c1a2 .elementor-icon-box-title {
+        min-height: auto;
+    }
+
+    /* 히어로 타이틀 "BUSINESS" 모바일 줄바꿈 방지 */
+    .elementor-element-3074b694 .elementor-heading-title {
+        white-space: nowrap;
+    }
+}
+
 .entry h1, .entry h2 {
     text-align: center;
 }
