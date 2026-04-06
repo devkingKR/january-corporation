@@ -1101,7 +1101,7 @@ body.oceanwp-theme #site-header #site-navigation,
 /* 반응형 개선 - 태블릿 */
 @media (max-width: 1024px) {
     .entry.clr {
-        padding: 50px 30px;
+        padding: 0;
     }
 }
 
