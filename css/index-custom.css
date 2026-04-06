@@ -152,6 +152,7 @@ body {
 }
 
 .elementor-inner-section .elementor-icon-box-content {
+    width: 100%;
     flex: 1;
 }
 
