@@ -1,0 +1,49 @@
+# EditorConfig - 에디터 간 일관된 코딩 스타일 유지
+# https://editorconfig.org
+
+root = true
+
+# 모든 파일 기본 설정
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = tab
+indent_size = 4
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# HTML 파일
+[*.html]
+indent_style = tab
+indent_size = 4
+
+# CSS 파일
+[*.css]
+indent_style = tab
+indent_size = 4
+
+# JavaScript 파일
+[*.js]
+indent_style = tab
+indent_size = 4
+
+# Python 파일
+[*.py]
+indent_style = space
+indent_size = 4
+
+# Markdown 파일
+[*.md]
+trim_trailing_whitespace = false
+indent_style = space
+indent_size = 2
+
+# JSON 파일
+[*.json]
+indent_style = space
+indent_size = 2
+
+# YAML 파일
+[*.{yml,yaml}]
+indent_style = space
+indent_size = 2

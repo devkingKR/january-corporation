@@ -1,0 +1,114 @@
+<h2>문의 폼 색상 옵션</h2>
+<p class="subtitle">마음에 드는 스타일을 선택해주세요</p>
+
+<div class="cards">
+
+  <!-- Option A: Dark/Black -->
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="background:#111111;padding:20px;border-radius:6px;">
+        <div style="text-align:center;margin-bottom:12px;">
+          <div style="width:20px;height:3px;background:rgba(255,255,255,0.3);margin:0 auto 8px;border-radius:2px;"></div>
+          <div style="color:#ffffff;font-size:13px;font-weight:700;font-family:sans-serif;">문의하기</div>
+          <div style="color:rgba(255,255,255,0.5);font-size:10px;font-family:sans-serif;margin-top:4px;">궁금하신 점을 보내주세요</div>
+        </div>
+        <div style="background:#ffffff;border-radius:8px;padding:14px;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px;">
+            <div style="background:#f5f5f5;border-radius:4px;padding:7px;font-size:9px;color:#999;font-family:sans-serif;">이름</div>
+            <div style="background:#f5f5f5;border-radius:4px;padding:7px;font-size:9px;color:#999;font-family:sans-serif;">이메일</div>
+          </div>
+          <div style="background:#f5f5f5;border-radius:4px;padding:7px;font-size:9px;color:#999;font-family:sans-serif;margin-bottom:8px;">문의 유형 ▾</div>
+          <div style="background:#f5f5f5;border-radius:4px;padding:7px;font-size:9px;color:#999;font-family:sans-serif;margin-bottom:8px;">제목</div>
+          <div style="background:#f5f5f5;border-radius:4px;padding:7px;font-size:9px;color:#999;font-family:sans-serif;height:24px;margin-bottom:10px;">본문</div>
+          <div style="background:#111111;color:#ffffff;border-radius:4px;padding:7px;font-size:9px;font-weight:700;text-align:center;font-family:sans-serif;">문의 보내기</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A. 블랙 & 화이트</h3>
+      <p>검정 배경에 흰 카드. 사이트 헤더(#000) 색상과 일치. 모던하고 고급스러운 느낌.</p>
+    </div>
+  </div>
+
+  <!-- Option B: Light Gray -->
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="background:#f8f9ff;padding:20px;border-radius:6px;border:1px solid #eee;">
+        <div style="text-align:center;margin-bottom:12px;">
+          <div style="width:20px;height:3px;background:#667eea;margin:0 auto 8px;border-radius:2px;"></div>
+          <div style="color:#000000;font-size:13px;font-weight:700;font-family:sans-serif;">문의하기</div>
+          <div style="color:#999;font-size:10px;font-family:sans-serif;margin-top:4px;">궁금하신 점을 보내주세요</div>
+        </div>
+        <div style="background:#ffffff;border-radius:8px;padding:14px;border:1px solid #eee;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px;">
+            <div style="border:1px solid #ddd;border-radius:4px;padding:7px;font-size:9px;color:#999;font-family:sans-serif;">이름</div>
+            <div style="border:1px solid #ddd;border-radius:4px;padding:7px;font-size:9px;color:#999;font-family:sans-serif;">이메일</div>
+          </div>
+          <div style="border:1px solid #ddd;border-radius:4px;padding:7px;font-size:9px;color:#999;font-family:sans-serif;margin-bottom:8px;">문의 유형 ▾</div>
+          <div style="border:1px solid #ddd;border-radius:4px;padding:7px;font-size:9px;color:#999;font-family:sans-serif;margin-bottom:8px;">제목</div>
+          <div style="border:1px solid #ddd;border-radius:4px;padding:7px;font-size:9px;color:#999;font-family:sans-serif;height:24px;margin-bottom:10px;">본문</div>
+          <div style="background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;border-radius:4px;padding:7px;font-size:9px;font-weight:700;text-align:center;font-family:sans-serif;">문의 보내기</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B. 라이트 그레이 (미니멀)</h3>
+      <p>연한 회색 배경에 흰 카드. 버튼만 기존 보라 그라디언트 유지. 깔끔하고 가벼운 느낌.</p>
+    </div>
+  </div>
+
+  <!-- Option C: Dark gradient (different colors) -->
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);padding:20px;border-radius:6px;">
+        <div style="text-align:center;margin-bottom:12px;">
+          <div style="width:20px;height:3px;background:rgba(255,255,255,0.3);margin:0 auto 8px;border-radius:2px;"></div>
+          <div style="color:#ffffff;font-size:13px;font-weight:700;font-family:sans-serif;">문의하기</div>
+          <div style="color:rgba(255,255,255,0.5);font-size:10px;font-family:sans-serif;margin-top:4px;">궁금하신 점을 보내주세요</div>
+        </div>
+        <div style="background:#ffffff;border-radius:8px;padding:14px;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px;">
+            <div style="background:#f5f5f5;border-radius:4px;padding:7px;font-size:9px;color:#999;font-family:sans-serif;">이름</div>
+            <div style="background:#f5f5f5;border-radius:4px;padding:7px;font-size:9px;color:#999;font-family:sans-serif;">이메일</div>
+          </div>
+          <div style="background:#f5f5f5;border-radius:4px;padding:7px;font-size:9px;color:#999;font-family:sans-serif;margin-bottom:8px;">문의 유형 ▾</div>
+          <div style="background:#f5f5f5;border-radius:4px;padding:7px;font-size:9px;color:#999;font-family:sans-serif;margin-bottom:8px;">제목</div>
+          <div style="background:#f5f5f5;border-radius:4px;padding:7px;font-size:9px;color:#999;font-family:sans-serif;height:24px;margin-bottom:10px;">본문</div>
+          <div style="background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;border-radius:4px;padding:7px;font-size:9px;font-weight:700;text-align:center;font-family:sans-serif;">문의 보내기</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C. 딥 네이비 (다크)</h3>
+      <p>진한 네이비 그라디언트 배경. 기존 파란보라보다 어둡고 차분한 톤. 기업 느낌.</p>
+    </div>
+  </div>
+
+  <!-- Option D: Keep current but fix text -->
+  <div class="card" data-choice="d" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);padding:20px;border-radius:6px;">
+        <div style="text-align:center;margin-bottom:12px;">
+          <div style="width:20px;height:3px;background:rgba(255,255,255,0.6);margin:0 auto 8px;border-radius:2px;"></div>
+          <div style="color:#ffffff;font-size:13px;font-weight:800;font-family:sans-serif;letter-spacing:1px;">문의하기</div>
+          <div style="color:rgba(255,255,255,0.85);font-size:10px;font-family:sans-serif;margin-top:4px;">궁금하신 점을 보내주세요</div>
+        </div>
+        <div style="background:#ffffff;border-radius:8px;padding:14px;box-shadow:0 4px 20px rgba(0,0,0,0.2);">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px;">
+            <div style="border:1.5px solid #c9d4ff;border-radius:4px;padding:7px;font-size:9px;color:#555;font-family:sans-serif;">이름</div>
+            <div style="border:1.5px solid #c9d4ff;border-radius:4px;padding:7px;font-size:9px;color:#555;font-family:sans-serif;">이메일</div>
+          </div>
+          <div style="border:1.5px solid #c9d4ff;border-radius:4px;padding:7px;font-size:9px;color:#555;font-family:sans-serif;margin-bottom:8px;">문의 유형 ▾</div>
+          <div style="border:1.5px solid #c9d4ff;border-radius:4px;padding:7px;font-size:9px;color:#555;font-family:sans-serif;margin-bottom:8px;">제목</div>
+          <div style="border:1.5px solid #c9d4ff;border-radius:4px;padding:7px;font-size:9px;color:#555;font-family:sans-serif;height:24px;margin-bottom:10px;">본문</div>
+          <div style="background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;border-radius:4px;padding:7px;font-size:9px;font-weight:700;text-align:center;font-family:sans-serif;">문의 보내기</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>D. 현재 색상 유지 + 폼 카드 개선</h3>
+      <p>배경 그라디언트 유지. 카드 내 입력 필드 테두리를 연보라(#c9d4ff)로 변경해 조화롭게.</p>
+    </div>
+  </div>
+
+</div>

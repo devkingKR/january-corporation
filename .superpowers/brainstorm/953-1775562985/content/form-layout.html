@@ -1,0 +1,94 @@
+<h2>문의 폼 레이아웃 선택</h2>
+<p class="subtitle">contact.html 페이지에 추가될 문의 폼의 배치 방식을 선택해주세요</p>
+
+<div class="cards">
+
+  <!-- Option A: Single column full width -->
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="background:#f8f9ff;padding:16px;border-radius:6px;font-family:sans-serif;">
+        <div style="background:#000;color:#fff;padding:8px 12px;font-size:11px;border-radius:3px 3px 0 0;margin:-16px -16px 12px -16px;">헤더 (기존)</div>
+        <div style="background:#fff;border:1px solid #eee;border-radius:4px;padding:10px;margin-bottom:8px;font-size:10px;color:#555;">찾아오시는 길 + 지도 (기존)</div>
+        <div style="background:linear-gradient(135deg,#667eea,#764ba2);border-radius:4px;padding:12px;color:#fff;">
+          <div style="font-size:11px;font-weight:700;margin-bottom:8px;">문의하기</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:6px;">
+            <div style="background:rgba(255,255,255,0.2);border-radius:3px;padding:5px;font-size:9px;">이름</div>
+            <div style="background:rgba(255,255,255,0.2);border-radius:3px;padding:5px;font-size:9px;">이메일</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.2);border-radius:3px;padding:5px;font-size:9px;margin-bottom:6px;">문의 유형 ▾</div>
+          <div style="background:rgba(255,255,255,0.2);border-radius:3px;padding:5px;font-size:9px;margin-bottom:6px;">제목</div>
+          <div style="background:rgba(255,255,255,0.2);border-radius:3px;padding:5px;font-size:9px;height:30px;margin-bottom:6px;">본문</div>
+          <div style="background:#fff;color:#667eea;border-radius:3px;padding:5px;font-size:9px;font-weight:700;text-align:center;">전송</div>
+        </div>
+        <div style="background:#000;color:#fff;padding:6px 12px;font-size:10px;margin:8px -16px -16px -16px;border-radius:0 0 3px 3px;">푸터 (기존)</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A. 풀 와이드 단일 컬럼</h3>
+      <p>지도 섹션 아래에 그라디언트 배경의 폼 섹션 추가. 페이지 전체 너비 사용. 가장 눈에 띄고 임팩트 있음.</p>
+    </div>
+  </div>
+
+  <!-- Option B: Two column (contact info left, form right) -->
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="background:#f8f9ff;padding:16px;border-radius:6px;font-family:sans-serif;">
+        <div style="background:#000;color:#fff;padding:8px 12px;font-size:11px;border-radius:3px 3px 0 0;margin:-16px -16px 12px -16px;">헤더 (기존)</div>
+        <div style="background:#fff;border:1px solid #eee;border-radius:4px;padding:10px;margin-bottom:8px;font-size:10px;color:#555;">찾아오시는 길 + 지도 (기존)</div>
+        <div style="background:#fff;border:1px solid #e0e0e0;border-radius:4px;padding:10px;display:grid;grid-template-columns:1fr 1.5fr;gap:10px;">
+          <div style="border-right:1px solid #eee;padding-right:10px;">
+            <div style="font-size:10px;font-weight:700;color:#667eea;margin-bottom:6px;">연락처 정보</div>
+            <div style="font-size:9px;color:#555;line-height:1.6;">
+              📍 서울 강남구 역삼로 160<br>
+              📞 0507-1319-6411<br>
+              ✉️ january.corporation<br>2024@gmail.com<br><br>
+              <span style="font-size:8px;color:#999;">카카오·틱톡·유튜브</span>
+            </div>
+          </div>
+          <div>
+            <div style="font-size:10px;font-weight:700;color:#333;margin-bottom:6px;">문의하기</div>
+            <div style="background:#f5f5f5;border-radius:3px;padding:4px;font-size:8px;color:#999;margin-bottom:4px;">이름</div>
+            <div style="background:#f5f5f5;border-radius:3px;padding:4px;font-size:8px;color:#999;margin-bottom:4px;">이메일</div>
+            <div style="background:#f5f5f5;border-radius:3px;padding:4px;font-size:8px;color:#999;margin-bottom:4px;">문의 유형 ▾</div>
+            <div style="background:#f5f5f5;border-radius:3px;padding:4px;font-size:8px;color:#999;margin-bottom:4px;">제목</div>
+            <div style="background:#f5f5f5;border-radius:3px;padding:4px;font-size:8px;color:#999;height:20px;margin-bottom:6px;">본문</div>
+            <div style="background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;border-radius:3px;padding:4px;font-size:8px;font-weight:700;text-align:center;">전송</div>
+          </div>
+        </div>
+        <div style="background:#000;color:#fff;padding:6px 12px;font-size:10px;margin:8px -16px -16px -16px;border-radius:0 0 3px 3px;">푸터 (기존)</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B. 2컬럼 (정보 + 폼)</h3>
+      <p>왼쪽에 연락처 정보, 오른쪽에 폼. 기존 주소/SNS 정보를 재활용해 깔끔한 기업 문의 페이지 느낌.</p>
+    </div>
+  </div>
+
+  <!-- Option C: Minimal inline -->
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="background:#f8f9ff;padding:16px;border-radius:6px;font-family:sans-serif;">
+        <div style="background:#000;color:#fff;padding:8px 12px;font-size:11px;border-radius:3px 3px 0 0;margin:-16px -16px 12px -16px;">헤더 (기존)</div>
+        <div style="background:#fff;border:1px solid #eee;border-radius:4px;padding:10px;margin-bottom:8px;font-size:10px;color:#555;">찾아오시는 길 + 지도 (기존)</div>
+        <div style="background:#fff;padding:10px;text-align:center;">
+          <div style="font-size:11px;font-weight:700;color:#333;margin-bottom:4px;">문의하기</div>
+          <div style="font-size:9px;color:#999;margin-bottom:8px;">아래 양식을 작성해 보내주세요</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;max-width:200px;margin:0 auto 4px;">
+            <div style="border:1px solid #ddd;border-radius:3px;padding:4px;font-size:8px;color:#999;">이름</div>
+            <div style="border:1px solid #ddd;border-radius:3px;padding:4px;font-size:8px;color:#999;">이메일</div>
+          </div>
+          <div style="border:1px solid #ddd;border-radius:3px;padding:4px;font-size:8px;color:#999;max-width:200px;margin:0 auto 4px;">문의 유형 ▾</div>
+          <div style="border:1px solid #ddd;border-radius:3px;padding:4px;font-size:8px;color:#999;max-width:200px;margin:0 auto 4px;">제목</div>
+          <div style="border:1px solid #ddd;border-radius:3px;padding:4px;font-size:8px;color:#999;max-width:200px;margin:0 auto 4px;height:20px;">본문</div>
+          <div style="background:#333;color:#fff;border-radius:3px;padding:4px;font-size:8px;max-width:200px;margin:6px auto 0;text-align:center;">전송</div>
+        </div>
+        <div style="background:#000;color:#fff;padding:6px 12px;font-size:10px;margin:8px -16px -16px -16px;border-radius:0 0 3px 3px;">푸터 (기존)</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C. 미니멀 센터 정렬</h3>
+      <p>흰 배경에 가운데 정렬된 심플한 폼. 기존 페이지 스타일을 해치지 않고 조용하게 녹아드는 방식.</p>
+    </div>
+  </div>
+
+</div>
