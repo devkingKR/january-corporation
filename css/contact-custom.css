@@ -1157,7 +1157,7 @@ body.oceanwp-theme #site-header #site-navigation,
 
 /* ===== 문의 폼 섹션 ===== */
 .contact-form-section {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
     padding: 60px 20px;
     width: 100%;
     box-sizing: border-box;
