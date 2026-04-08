@@ -1181,7 +1181,7 @@ body.oceanwp-theme #site-header #site-navigation,
     border-radius: 2px;
 }
 
-.contact-form-title {
+.entry.clr .contact-form-title {
     color: #ffffff;
     font-size: 24px;
     font-weight: 700;
