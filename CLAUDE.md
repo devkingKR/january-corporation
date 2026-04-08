@@ -15,14 +15,12 @@
 2. jQuery Migrate 재추가 금지
 3. `.다운로드` 확장자 파일 참조 금지
 4. 메뉴 구조 변경 금지
-5. **`git push` 직접 실행 금지** — 배포는 반드시 소스트리(Sourcetree) UI를 통해 진행
 
 ### 반드시 할 것
 1. CSS 수정은 `css/*-custom.css` 파일에서만
 2. 이미지는 `wp-content/uploads/연도/월/` 폴더에 저장
 3. 수정 후 `python3 test_harness.py` 실행
 4. 커밋 메시지는 한글로, 접두어 사용 (수정:, 기능:, 스타일: 등)
-5. **배포(push)는 소스트리 UI에서 직접 진행** — Claude는 커밋까지만 담당
 
 ## 파일 구조
 

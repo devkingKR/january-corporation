@@ -152,61 +152,8 @@ body {
 }
 
 .elementor-inner-section .elementor-icon-box-content {
+    width: 100%;
     flex: 1;
-}
-
-/* ========== Feature 카드 타이틀 높이 통일 + 구분선 ========== */
-/* post-7.css의 위젯별 개별 선택자(.elementor-7 .elementor-element.elementor-element-XXXX)를
-   !important로 무력화. 6개 카드 모두 적용. */
-
-.elementor-element-43937bb4 .elementor-icon-box-title {
-    display: block !important;
-    position: relative !important;
-    text-align: center !important;
-    text-transform: uppercase !important;
-    font-size: 18px !important;
-    font-weight: 800 !important;
-    line-height: 1.2 !important;
-    letter-spacing: 0.08em !important;
-    padding-bottom: 25px !important;
-    margin-bottom: 0 !important;
-    border: none !important;
-    background-image: none !important;
-}
-
-/* post-7.css의 .elementor-icon-box-title a 도 무력화 */
-.elementor-element-43937bb4 .elementor-icon-box-title a {
-    font-size: 18px !important;
-    font-weight: 800 !important;
-    line-height: 1.2 !important;
-    letter-spacing: 0.08em !important;
-}
-
-/* ::before 차단 */
-.elementor-element-43937bb4 .elementor-icon-box-title::before {
-    display: none !important;
-}
-
-/* 구분선: 텍스트 줄 수와 무관하게 타이틀 하단 중앙 고정 */
-.elementor-element-43937bb4 .elementor-icon-box-title::after {
-    content: "" !important;
-    display: block !important;
-    position: absolute !important;
-    bottom: 0 !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    width: 48px !important;
-    height: 2px !important;
-    background-color: #ffffff !important;
-    background-image: none !important;
-}
-
-/* 본문 텍스트 */
-.elementor-element-43937bb4 .elementor-icon-box-description {
-    text-align: center !important;
-    font-size: 14px !important;
-    line-height: 1.9 !important;
-    margin-top: 20px !important;
 }
 
 /* ========== 하이브리드 정렬 (제목 중앙, 본문 왼쪽) ========== */
@@ -655,13 +602,6 @@ body.oceanwp-theme #site-header #site-navigation,
 
     body.mobile-menu-open {
         overflow: hidden;
-    }
-
-    /* 컨테이너 좌우 패딩 제거 */
-    .container,
-    .elementor-section-boxed > .elementor-container {
-        padding-left: 0;
-        padding-right: 0;
     }
 }
 
