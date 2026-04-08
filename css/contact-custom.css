@@ -1154,3 +1154,259 @@ body.oceanwp-theme #site-header #site-navigation,
     transform: translateY(0);
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
+
+/* ===== 문의 폼 섹션 ===== */
+.contact-form-section {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    padding: 60px 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.contact-form-inner {
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.contact-form-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.contact-form-divider {
+    width: 28px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.5);
+    margin: 0 auto 16px;
+    border-radius: 2px;
+}
+
+.entry.clr .contact-form-title {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 8px;
+}
+
+.contact-form-subtitle {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    margin: 0;
+}
+
+.contact-form-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 36px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+.contact-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.contact-form-group {
+    margin-bottom: 16px;
+}
+
+.contact-form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 6px;
+}
+
+.contact-required {
+    color: #667eea;
+}
+
+.contact-form-group input[type="text"],
+.contact-form-group input[type="email"],
+.contact-form-group select,
+.contact-form-group textarea {
+    width: 100%;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 14px;
+    color: #333333;
+    background: #fafafa;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+    transition: border-color 0.2s;
+}
+
+.contact-form-group input[type="text"]:focus,
+.contact-form-group input[type="email"]:focus,
+.contact-form-group select:focus,
+.contact-form-group textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    background: #ffffff;
+}
+
+.contact-form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.contact-form-privacy {
+    margin-bottom: 20px;
+}
+
+.contact-privacy-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #555555;
+    cursor: pointer;
+}
+
+.contact-privacy-label input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #667eea;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.contact-privacy-link {
+    color: #667eea;
+    text-decoration: underline;
+    white-space: nowrap;
+}
+
+.contact-form-submit {
+    width: 100%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Noto Sans KR', sans-serif;
+    letter-spacing: 0.5px;
+    transition: opacity 0.2s;
+}
+
+.contact-form-submit:hover {
+    opacity: 0.9;
+}
+
+.contact-form-notice {
+    text-align: center;
+    font-size: 12px;
+    color: #aaaaaa;
+    margin: 12px 0 0;
+}
+
+.contact-form-hidden {
+    display: none;
+}
+
+.contact-form-success {
+    text-align: center;
+    padding: 32px 24px;
+    color: #667eea;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+.contact-form-error {
+    text-align: center;
+    padding: 16px;
+    color: #e53e3e;
+    font-size: 14px;
+    margin-top: 12px;
+}
+
+/* ===== 개인정보처리방침 페이지 ===== */
+.privacy-section {
+    padding: 60px 20px;
+    background: #ffffff;
+}
+
+.privacy-inner {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.privacy-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #000000;
+    margin: 0 0 8px;
+}
+
+.privacy-updated {
+    font-size: 13px;
+    color: #999999;
+    margin: 0 0 40px;
+}
+
+.privacy-block {
+    margin-bottom: 32px;
+}
+
+.privacy-heading {
+    font-size: 16px;
+    font-weight: 700;
+    color: #333333;
+    margin: 0 0 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.privacy-block p,
+.privacy-block ul {
+    font-size: 14px;
+    color: #555555;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.privacy-block ul {
+    padding-left: 20px;
+}
+
+.privacy-block a {
+    color: #667eea;
+    text-decoration: underline;
+}
+
+.privacy-back {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid #eeeeee;
+}
+
+.privacy-back-link {
+    font-size: 14px;
+    color: #667eea;
+    text-decoration: none;
+}
+
+.privacy-back-link:hover {
+    text-decoration: underline;
+}
+
+/* ===== 반응형 ===== */
+@media (max-width: 600px) {
+    .contact-form-row {
+        grid-template-columns: 1fr;
+    }
+    .contact-form-card {
+        padding: 24px 16px;
+    }
+    .contact-form-section {
+        padding: 40px 16px;
+    }
+}
