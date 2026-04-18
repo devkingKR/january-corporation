@@ -1,6 +1,9 @@
 /* ========== 한글 단어 단위 줄바꿈 ========== */
 * { word-break: keep-all; }
 
+/* 영문 아이콘박스 제목은 기본 줄바꿈 유지 */
+.elementor-icon-box-title { word-break: normal; }
+
 /* ========== 메인 히어로 섹션 (전체 너비) ========== */
 .elementor-element-d7aa797 {
     width: 100vw !important;
