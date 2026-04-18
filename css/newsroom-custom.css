@@ -1,6 +1,11 @@
 /* ========== 한글 단어 단위 줄바꿈 ========== */
 * { word-break: keep-all; }
 
+/* NEWSROOM 최상단 제목 줄바꿈 방지 */
+.elementor-element-be1b6a7 .elementor-heading-title {
+    white-space: nowrap;
+}
+
 /* ========== 모던 폰트 (갤럭시코퍼레이션 스타일) ========== */
 body, html {
     font-family: 'Montserrat', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
