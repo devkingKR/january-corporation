@@ -77,6 +77,9 @@ JS 파일:
 <p>월. 내용 설명</p>
 ```
 
+### 페이지 내용 수정 시
+- `sitemap.xml`의 해당 페이지 `<lastmod>` 날짜를 수정일로 업데이트
+
 ### 테스트 실행
 ```bash
 python3 test_harness.py
