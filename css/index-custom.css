@@ -1,3 +1,6 @@
+/* ========== 한글 단어 단위 줄바꿈 ========== */
+* { word-break: keep-all; }
+
 /* ========== 메인 히어로 섹션 (전체 너비) ========== */
 .elementor-element-d7aa797 {
     width: 100vw !important;
