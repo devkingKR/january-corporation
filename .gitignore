@@ -37,3 +37,4 @@ venv/
 # 백업 파일
 *.backup
 *_backup.*
+superpowers/
