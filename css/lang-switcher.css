@@ -1,11 +1,4 @@
-/* Language Switcher */
-.lang-switcher {
-    display: flex;
-    align-items: center;
-    gap: 2px;
-    margin-left: 20px;
-}
-
+/* Language Switcher — shared styles */
 .lang-switcher a {
     display: inline-block;
     padding: 4px 8px;
@@ -33,12 +26,31 @@
     font-size: 11px;
 }
 
+/* Desktop: fixed at top-right corner */
+#site-navigation .lang-switcher {
+    position: fixed;
+    top: 0;
+    right: 20px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    z-index: 10001;
+}
+
+/* Mobile dropdown: in-flow inside menu, shifted left to clear X button */
+#mobile-dropdown .lang-switcher {
+    position: static;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    padding: 12px 15px;
+    padding-right: 60px;
+}
+
+/* Mobile: hide the desktop fixed switcher to avoid overlap with X button */
 @media (max-width: 768px) {
-    .lang-switcher {
-        margin-left: 10px;
-    }
-    .lang-switcher a {
-        font-size: 11px;
-        padding: 3px 6px;
+    #site-navigation .lang-switcher {
+        display: none;
     }
 }
