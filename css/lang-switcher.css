@@ -53,4 +53,14 @@
     #site-navigation .lang-switcher {
         display: none;
     }
+
+    /* Show lang-switcher inside the mobile overlay when menu is open */
+    body.mobile-menu-open #site-navigation .lang-switcher,
+    #site-navigation-wrap.mobile-menu-active #site-navigation .lang-switcher {
+        display: flex;
+        position: static;
+        height: auto;
+        padding: 15px 0;
+        justify-content: center;
+    }
 }
