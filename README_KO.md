@@ -33,6 +33,14 @@ january-corporation/
 ├── newsroom.html          # 뉴스룸
 ├── contact.html           # 연락처
 │
+├── en/                    # 영문 페이지 (한국어와 1:1 대응)
+│   ├── index.html
+│   ├── company.html
+│   ├── business.html
+│   ├── work.html
+│   ├── newsroom.html
+│   └── contact.html
+│
 ├── css/
 │   ├── fontawesome-all.min.css
 │   ├── simple-line-icons.min.css
@@ -120,6 +128,7 @@ Large:      ≥ 1200px
 
 ### 문서 참조
 - **POLICY.md**: 코딩 규칙 및 정책
+- **ENGLISH_PAGES.md**: 영문 페이지(en/) 구조·관리 가이드
 - **DEVELOPMENT.md**: 개발 로드맵 및 계획
 
 ### 시작하기
@@ -175,7 +184,7 @@ git commit -m "기능: newsroom에 FAQ 섹션 추가"
 
 ---
 
-## 📊 성능 지표
+## 📊 성능 지표 (2026년 4월 측정 기준)
 
 | 메트릭 | 값 |
 |--------|-----|

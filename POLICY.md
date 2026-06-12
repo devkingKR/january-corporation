@@ -44,7 +44,7 @@
 - COMPANY (회사소개)
 ```
 
-변경 금지 - 모든 HTML에서 동일하게 유지
+변경 금지 - 모든 HTML에서 동일하게 유지 (`en/` 영문 페이지도 동일 구조 적용)
 
 ### 4. 커밋 메시지 컨벤션
 
@@ -54,8 +54,10 @@
 
 상세 설명 (필요시)
 
-Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>
+Co-Authored-By: Claude <noreply@anthropic.com>
 ```
+
+(모델명은 작업한 Claude 모델에 따라 달라질 수 있음)
 
 카테고리:
 - `최적화`: 성능, 파일 크기, 로딩 시간
