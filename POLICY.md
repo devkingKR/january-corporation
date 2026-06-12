@@ -35,13 +35,14 @@
 
 ### 3. 메뉴 네비게이션 규칙
 
-현재 메뉴 구조:
+현재 메뉴 구조 (표시 순서):
 ```
-- NEWSROOM (뉴스룸)
-- Work (포트폴리오)
-- CONTACT (연락처)
-- BUSINESS (사업소개)
 - COMPANY (회사소개)
+- BUSINESS (사업소개)
+- ARTIST (아티스트)
+- WORK (포트폴리오)
+- NEWSROOM (뉴스룸)
+- CONTACT (연락처)
 ```
 
 변경 금지 - 모든 HTML에서 동일하게 유지 (`en/` 영문 페이지도 동일 구조 적용)

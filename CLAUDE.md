@@ -32,6 +32,7 @@
 ├── index.html      (홈)
 ├── company.html    (회사소개)
 ├── business.html   (사업소개)
+├── artist.html     (아티스트)
 ├── work.html       (포트폴리오)
 ├── newsroom.html   (뉴스룸)
 └── contact.html    (연락처)
@@ -40,6 +41,7 @@
 ├── en/index.html
 ├── en/company.html
 ├── en/business.html
+├── en/artist.html
 ├── en/work.html
 ├── en/newsroom.html
 └── en/contact.html
@@ -48,6 +50,7 @@ CSS 파일:
 ├── css/index-custom.css
 ├── css/company-custom.css
 ├── css/business-custom.css
+├── css/artist-custom.css
 ├── css/work-custom.css
 ├── css/newsroom-custom.css
 └── css/contact-custom.css

@@ -29,6 +29,7 @@ january-corporation/
 ├── index.html              # 홈페이지
 ├── company.html            # 회사소개
 ├── business.html           # 사업소개
+├── artist.html             # 아티스트
 ├── work.html              # 포트폴리오
 ├── newsroom.html          # 뉴스룸
 ├── contact.html           # 연락처
@@ -37,6 +38,7 @@ january-corporation/
 │   ├── index.html
 │   ├── company.html
 │   ├── business.html
+│   ├── artist.html
 │   ├── work.html
 │   ├── newsroom.html
 │   └── contact.html
