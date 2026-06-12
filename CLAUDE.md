@@ -126,16 +126,22 @@ JS 파일:
 <p><img src="./wp-content/uploads/2026/04/파일명.jpg" alt="설명" width="300" height="200"></p>
 <!-- en/ 페이지에서는 src="../wp-content/..." -->
 ```
+- [ ] 추가 후 `python3 check_paths.py`로 경로 확인
 
 ### 테스트 실행
 ```bash
 python3 test_harness.py    # 전체 테스트 (로컬 서버 필요)
 python3 check_korean.py    # 영문 페이지 잔여 한글 검사
+python3 check_paths.py     # 전체 페이지 로컬 경로 검사
 ```
 
 `check_korean.py`는 `en/*.html`의 텍스트와 접근성 속성(alt, title,
 aria-label, placeholder)에서 한글을 찾습니다. 의도된 한글(한국어 곡명,
 인용 기사 원문 등)은 `korean_allowlist.txt`에 등록해 통과시킵니다.
+
+`check_paths.py`는 한글·영문 전체 페이지의 src/href/srcset 참조를 실제
+파일과 대조합니다. en/ 페이지의 `./` vs `../` 접두어 오류, 깨진 이미지·
+링크, 대소문자 불일치(GitHub Pages는 대소문자 구분)를 잡습니다.
 
 ### 커밋 & 푸시
 ```bash

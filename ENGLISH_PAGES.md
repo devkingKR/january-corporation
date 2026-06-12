@@ -33,6 +33,9 @@ en/
 | `./wp-includes/...` | `../wp-includes/...` |
 | `./company.html` | `./company.html` (en/ 기준) |
 
+경로 오류는 `python3 check_paths.py`로 자동 검사할 수 있습니다
+(접두어 오류, 깨진 참조, 대소문자 불일치 검출).
+
 ## SEO 설정
 
 각 페이지 `<head>`에 hreflang 태그가 설정되어 있습니다.
