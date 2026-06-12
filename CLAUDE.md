@@ -79,8 +79,10 @@ JS 파일:
 
 ### 영문 페이지 수정 후 확인
 
-- 수정한 부분에 한글이 남아 있지 않은지 확인
-- 작품명·고유명사는 기존 영문 표기를 따름 (예: "Longhair Legend")
+- `python3 check_korean.py` 실행 — 잔여 한글 자동 검사
+- 의도된 한글(한국어 곡명·인용 기사 원문)은 `korean_allowlist.txt`에 등록
+- 작품명·고유명사는 기존 영문 표기를 따름 (예: "Longhair Legend",
+  "Picnic Live Sopung", "Bowling Avengers", "Stress Solution")
 
 ## 색상 팔레트
 
@@ -115,7 +117,7 @@ JS 파일:
 ### 문구/텍스트 수정
 - [ ] 한국어 페이지 수정
 - [ ] `en/` 동일 페이지의 해당 부분을 영문으로 수정
-- [ ] 수정 부분에 한글 잔존 여부 확인
+- [ ] `python3 check_korean.py`로 잔여 한글 확인
 - [ ] `sitemap.xml`에서 두 페이지의 `<lastmod>` 갱신
 
 ### 이미지 추가
@@ -127,8 +129,13 @@ JS 파일:
 
 ### 테스트 실행
 ```bash
-python3 test_harness.py
+python3 test_harness.py    # 전체 테스트 (로컬 서버 필요)
+python3 check_korean.py    # 영문 페이지 잔여 한글 검사
 ```
+
+`check_korean.py`는 `en/*.html`의 텍스트와 접근성 속성(alt, title,
+aria-label, placeholder)에서 한글을 찾습니다. 의도된 한글(한국어 곡명,
+인용 기사 원문 등)은 `korean_allowlist.txt`에 등록해 통과시킵니다.
 
 ### 커밋 & 푸시
 ```bash

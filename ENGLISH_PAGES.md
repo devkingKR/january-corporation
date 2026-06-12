@@ -56,7 +56,8 @@ en/
 
 1. 한국어 페이지 텍스트 수정
 2. `en/` 동일 파일의 해당 텍스트 영문으로 수정
-3. `sitemap.xml` 양쪽 페이지 `<lastmod>` 날짜 업데이트
+3. `python3 check_korean.py`로 잔여 한글 검사 (의도된 한글은 `korean_allowlist.txt`에 등록)
+4. `sitemap.xml` 양쪽 페이지 `<lastmod>` 날짜 업데이트
 
 ### 새 뉴스 기사 추가 시 (newsroom)
 1. `newsroom.html`에 한국어 기사 추가
