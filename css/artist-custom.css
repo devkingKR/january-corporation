@@ -618,18 +618,6 @@ body.oceanwp-theme #site-header #site-navigation,
 	color: #e6e6e6;
 }
 
-.artist-casting {
-	font-size: 15px;
-	color: #e0e0e0;
-	margin: 0 0 6px;
-}
-
-.artist-casting-note {
-	font-size: 13px;
-	color: #8a8a8a;
-	margin: 0;
-}
-
 /* ---------- records: lists + live photo ---------- */
 .artist-records {
 	display: flex;
