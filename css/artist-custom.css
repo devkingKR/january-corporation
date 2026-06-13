@@ -514,12 +514,6 @@ body.oceanwp-theme #site-header #site-navigation,
 	letter-spacing: 0;
 }
 
-.artist-tagline {
-	font-size: 17px;
-	color: #c7c7c7;
-	margin: 18px 0 0;
-}
-
 /* social links (YouTube / Instagram) */
 .artist-social {
 	display: flex;
