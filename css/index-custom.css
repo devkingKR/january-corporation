@@ -1322,3 +1322,9 @@ body.oceanwp-theme #site-header #site-navigation,
     transform: translate(-50%, -50%);
     border: 0;
 }
+
+.jan-hero-link {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+}

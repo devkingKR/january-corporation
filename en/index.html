@@ -548,6 +548,7 @@
                                             <div class="elementor-section-wrap">
                                                 <section class="elementor-section elementor-top-section elementor-element elementor-element-d7aa797 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="d7aa797" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
                                                     <div class="jan-hero-video" aria-hidden="true"></div>
+                                                    <a class="jan-hero-link" href="https://www.youtube.com/@%EC%A0%9C%EB%89%B4%EC%96%B4%EB%A6%AC%EC%BD%94%ED%8D%BC%EB%A0%88%EC%9D%B4%EC%85%98" target="_blank" rel="noopener" aria-label="Go to January Corporation YouTube channel"></a>
                                                     <div class="elementor-container elementor-column-gap-default">
                                                         <div class="elementor-row">
                                                             <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-63c9c87" data-id="63c9c87" data-element_type="column">
@@ -572,15 +573,17 @@
 window.addEventListener("load",function(){
   var box=document.querySelector(".jan-hero-video");
   if(!box||matchMedia("(prefers-reduced-motion: reduce)").matches||(navigator.connection&&navigator.connection.saveData))return;
-  var f=document.createElement("iframe");
-  f.src="https://www.youtube.com/embed/8eLm3QRBCt0?autoplay=1&mute=1&loop=1&playlist=8eLm3QRBCt0&start=165&end=195&controls=0&disablekb=1&modestbranding=1&playsinline=1&rel=0&iv_load_policy=3";
-  f.title="January Corporation Video";
-  f.tabIndex=-1;
-  f.allow="autoplay; encrypted-media; picture-in-picture";
-  f.referrerPolicy="strict-origin-when-cross-origin";
-  box.appendChild(f);
-  function fit(){var w=box.clientWidth,h=box.clientHeight,W=Math.max(w,h*16/9);f.style.width=W+"px";f.style.height=(W*9/16)+"px";}
-  fit();addEventListener("resize",fit);
+  var S=165,E=195,slot=document.createElement("div"),p;
+  box.appendChild(slot);
+  function fit(){var f=box.querySelector("iframe");if(!f)return;var w=box.clientWidth,h=box.clientHeight,W=Math.max(w,h*16/9)*1.3;f.style.width=W+"px";f.style.height=(W*9/16)+"px";}
+  window.onYouTubeIframeAPIReady=function(){
+    p=new YT.Player(slot,{videoId:"8eLm3QRBCt0",playerVars:{autoplay:1,mute:1,controls:0,disablekb:1,modestbranding:1,playsinline:1,rel:0,iv_load_policy:3,start:S},events:{
+      onReady:function(e){e.target.mute();e.target.playVideo();var f=box.querySelector("iframe");f.title="January Corporation Video";f.tabIndex=-1;fit();setInterval(function(){if(p.getCurrentTime&&p.getCurrentTime()>=E)p.seekTo(S,true);},500);},
+      onStateChange:function(e){if(e.data===0){p.seekTo(S,true);p.playVideo();}}
+    }});
+  };
+  var s=document.createElement("script");s.src="https://www.youtube.com/iframe_api";document.head.appendChild(s);
+  addEventListener("resize",fit);
 });
 </script>
 </section>
