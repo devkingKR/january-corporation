@@ -1158,24 +1158,73 @@ body.oceanwp-theme #site-header #site-navigation,
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-/* WORK 상단 소개 영상 (16:9) */
-.entry.clr .jan-feature-video {
-    max-width: 1140px;
-    margin: 40px auto 60px;
-    padding: 0 15px;
+/* WORK 작품 카드 (영상 + 설명) */
+.entry.clr .jan-block {
+    padding: 50px 0 20px;
+    background: #fff;
 }
 
-.entry.clr .jan-feature-frame {
-    position: relative;
-    width: 100%;
-    padding-top: 56.25%;
+.entry.clr .jan-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.entry.clr .jan-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #EBEBEB;
+}
+
+.entry.clr .jan-head h2 {
+    margin: 0;
+    font-size: 28px;
+    line-height: 1.3;
+    letter-spacing: -1px;
+    color: #222;
+}
+
+.entry.clr .jan-head a {
+    font-size: 15px;
+    color: #666;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.entry.clr .jan-head a:hover {
+    color: #000;
+}
+
+.entry.clr .jan-grid3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.entry.clr .jan-grid2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.entry.clr .jan-card {
     border: 1px solid #EBEBEB;
     border-radius: 4px;
     overflow: hidden;
+    background: #fff;
+}
+
+.entry.clr .jan-embed {
+    position: relative;
+    padding-top: 56.25%;
     background: #000;
 }
 
-.entry.clr .jan-feature-frame iframe {
+.entry.clr .jan-embed iframe {
     position: absolute;
     top: 0;
     left: 0;
@@ -1183,4 +1232,49 @@ body.oceanwp-theme #site-header #site-navigation,
     height: 100%;
     max-width: none;
     border: 0;
+}
+
+.entry.clr .jan-meta {
+    padding: 14px 16px 18px;
+}
+
+.entry.clr .jan-meta strong {
+    display: block;
+    font-size: 15px;
+    line-height: 22.5px;
+    font-weight: 500;
+    color: #222;
+}
+
+.entry.clr .jan-date {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 13px;
+    color: #666;
+}
+
+.entry.clr .jan-desc {
+    display: block;
+    margin-top: 6px;
+    font-size: 14px;
+    line-height: 21px;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .entry.clr .jan-head h2 {
+        font-size: 22px;
+        white-space: nowrap;
+    }
+
+    .entry.clr .jan-head {
+        flex-wrap: wrap;
+        gap: 6px 16px;
+    }
+
+    .entry.clr .jan-grid3,
+    .entry.clr .jan-grid2 {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
 }
