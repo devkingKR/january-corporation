@@ -1413,3 +1413,27 @@ body.oceanwp-theme #site-header #site-navigation,
         padding: 40px 16px;
     }
 }
+
+/* 스팸 방지용 숨은 입력칸 (사람에게는 보이지 않음) */
+.contact-hp {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* 상단 CI 로고 영역: 크기 축소 (로고 이미지는 어두운 배경용 흰 글씨 버전) */
+.entry.clr .elementor-element.elementor-element-482b4bec {
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+
+.entry.clr .elementor-element-3e15b71 img {
+    display: block;
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    margin: 0 auto;
+}
