@@ -1358,3 +1358,58 @@ article .dark-section,
     transform: translateY(0);
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
+
+/* AT A GLANCE 요약 박스 */
+.entry.clr .jan-glance {
+    margin: 48px 0 24px;
+    padding: 6px 28px 10px;
+    background: #f8f9ff;
+    border: 1px solid #EBEBEB;
+    border-radius: 4px;
+}
+
+.entry.clr .jan-glance h2 {
+    margin: 20px 0 8px;
+    font-size: 22px;
+    text-align: left;
+    color: #000;
+}
+
+.entry.clr .jan-glance dl {
+    margin: 0;
+}
+
+.entry.clr .jan-glance .jan-glance-row {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 16px;
+    padding: 14px 0;
+    border-top: 1px solid #EBEBEB;
+}
+
+.entry.clr .jan-glance dt {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.7;
+    font-weight: 600;
+    color: #555;
+}
+
+.entry.clr .jan-glance dd {
+    margin: 0;
+    font-size: 15px;
+    color: #000;
+    line-height: 1.7;
+    text-indent: 0;
+}
+
+@media (max-width: 768px) {
+    .entry.clr .jan-glance {
+        padding: 4px 18px 8px;
+    }
+
+    .entry.clr .jan-glance .jan-glance-row {
+        grid-template-columns: 1fr;
+        gap: 4px;
+    }
+}
