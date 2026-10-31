@@ -253,7 +253,18 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 				<div class="elementor-element elementor-element-52b5607e elementor-widget elementor-widget-image" data-id="52b5607e" data-element_type="widget" data-widget_type="image.default">
 				<div class="elementor-widget-container">
 								<div class="elementor-image">
-												<img decoding="async" src="./business/2056030-p2juo1a08f694fcdhfjd4wwwk2z1ea3qtunpqcsyu0.jpg" title="더미디어 광고제작 홍보_역삼역" alt="더미디어 광고제작 홍보_역삼역">														</div>
+												<video class="jan-biz-video jan-biz-video-lazy" data-src="./wp-content/uploads/2026/10/business-forest-drone.mp4" muted loop playsinline preload="none" aria-label="햇살이 비치는 숲속을 날아가는 드론 영상"></video><script>
+(function(){
+  var v=document.querySelector("video[data-src]");
+  if(!v)return;
+  function start(){v.src=v.getAttribute("data-src");v.load();var p=v.play();if(p&&p.catch)p.catch(function(){});}
+  if(navigator.connection&&navigator.connection.saveData)return;
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){start();io.disconnect();}},{rootMargin:"200px"});
+    io.observe(v);
+  }else{start();}
+})();
+</script>														</div>
 						</div>
 				</div>
 						</div>

@@ -1392,3 +1392,10 @@ body.oceanwp-theme #site-header #site-navigation,
     height: auto;
     border-radius: 10px;
 }
+
+/* 용량이 큰 영상: 화면에 가까워질 때 불러오므로 미리 자리를 확보 */
+.entry.clr .jan-biz-video-lazy {
+    aspect-ratio: 16 / 9;
+    background: #111;
+    object-fit: cover;
+}
