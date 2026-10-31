@@ -1506,3 +1506,43 @@ body.oceanwp-theme #site-header #site-navigation,
         width: 100%;
     }
 }
+
+/* WORKS 포스터 카드 */
+.entry.clr .jan-thumb.jan-poster {
+    aspect-ratio: 5 / 7;
+}
+
+.entry.clr .jan-sub {
+    display: block;
+    margin: -8px 0 20px;
+    font-size: 15px;
+    color: #666;
+}
+
+.entry.clr .jan-desc {
+    display: block;
+    margin-top: 6px;
+    font-size: 14px;
+    line-height: 21px;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .entry.clr .jan-works .jan-card {
+        max-width: 320px;
+        margin: 0 auto;
+        width: 100%;
+    }
+}
+
+/* 소풍 카드: 가로 포스터 2장을 위아래로 쌓아 세로 카드에 맞춤 */
+.entry.clr .jan-thumb.jan-stack {
+    display: flex;
+    flex-direction: column;
+}
+
+.entry.clr .jan-thumb.jan-stack img {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+}
