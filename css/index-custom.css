@@ -1635,3 +1635,60 @@ body.oceanwp-theme #site-header #site-navigation,
 .entry.clr .jan-marquee.jan-rev .jan-track {
     animation-direction: reverse;
 }
+
+/* PARTNERS 로고별 높이 (인라인 스타일 대신 클래스) */
+.entry.clr .jan-p-kbs {
+    --h: 30px;
+}
+
+.entry.clr .jan-p-mbc-plus {
+    --h: 30px;
+}
+
+.entry.clr .jan-p-channel-a {
+    --h: 36px;
+}
+
+.entry.clr .jan-p-mbn {
+    --h: 26px;
+}
+
+.entry.clr .jan-p-tving {
+    --h: 34px;
+}
+
+.entry.clr .jan-p-wavve {
+    --h: 32px;
+}
+
+.entry.clr .jan-p-samsung-tv-plus {
+    --h: 64px;
+}
+
+.entry.clr .jan-p-watcha {
+    --h: 22px;
+}
+
+.entry.clr .jan-p-kt-skylife {
+    --h: 34px;
+}
+
+.entry.clr .jan-p-sk-broadband {
+    --h: 40px;
+}
+
+.entry.clr .jan-p-choice {
+    --h: 28px;
+}
+
+.entry.clr .jan-p-bullsone {
+    --h: 28px;
+}
+
+.entry.clr .jan-p-seoul-tourism-organization {
+    --h: 38px;
+}
+
+.entry.clr .jan-p-korea-industrial-complex-corp {
+    --h: 34px;
+}
