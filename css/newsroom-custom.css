@@ -1186,3 +1186,13 @@ body.oceanwp-theme #site-header #site-navigation,
     transform: translateY(0);
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
+
+/* 기사 카드: 매체명 · 날짜 */
+.entry.clr .news-meta {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 13px;
+    font-style: normal;
+    line-height: 1.5;
+    color: #666;
+}
