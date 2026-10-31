@@ -31,7 +31,7 @@
 
 .elementor-element-d7aa797 .elementor-image img {
     max-width: 300px;
-    margin: 100px auto !important;
+    margin: 150px auto !important;
 }
 
 /* ========== WORKS/BUSINESS 카드 섹션 중앙 정렬 ========== */
@@ -1284,4 +1284,41 @@ body.oceanwp-theme #site-header #site-navigation,
     opacity: 1;
     transform: translateY(0);
     transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* 메인 상단 배경 영상 (로딩 완료 후 JS가 iframe 삽입, 그 전에는 배경 이미지 표시) */
+.elementor-7 .elementor-element.elementor-element-d7aa797 {
+    position: relative;
+    overflow: hidden;
+}
+
+.elementor-7 .elementor-element.elementor-element-d7aa797 > .elementor-container {
+    position: relative;
+    z-index: 1;
+}
+
+.jan-hero-video {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.jan-hero-video::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+}
+
+.jan-hero-video iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    transform: translate(-50%, -50%);
+    border: 0;
 }
