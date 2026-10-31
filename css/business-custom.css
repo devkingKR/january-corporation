@@ -1384,3 +1384,11 @@ body.oceanwp-theme #site-header #site-navigation,
 .entry.clr .jan-p-korea-industrial-complex-corp {
     --h: 34px;
 }
+
+/* What we do 옆 영상 (소리 없이 자동 반복) */
+.entry.clr .jan-biz-video {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
