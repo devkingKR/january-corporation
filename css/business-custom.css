@@ -1178,3 +1178,209 @@ body.oceanwp-theme #site-header #site-navigation,
     transform: translateY(0);
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
+
+/* 서비스 카드: 카드는 설명만, 외부 이동은 라벨 링크로 */
+.entry.clr .jan-biz-link {
+    margin: 14px 0 0;
+    text-align: center;
+}
+
+.entry.clr .jan-biz-link a {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #9fb0ff;
+    text-decoration: none;
+    border-bottom: 1px solid #9fb0ff;
+}
+
+.entry.clr .jan-biz-link a:hover {
+    color: #fff;
+    border-bottom-color: #fff;
+}
+
+/* PARTNERS 두 줄 (메인과 동일) */
+.entry.clr .jan-block {
+    padding: 50px 0 20px;
+    background: #fff;
+}
+
+.entry.clr .jan-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.entry.clr .jan-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #EBEBEB;
+}
+
+.entry.clr .jan-head h2 {
+    margin: 0;
+    font-size: 28px;
+    line-height: 1.3;
+    letter-spacing: -1px;
+    color: #222;
+}
+
+.entry.clr .jan-head a {
+    font-size: 15px;
+    color: #666;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.entry.clr .jan-head a:hover {
+    color: #000;
+}
+
+/* PARTNERS 로고 띠 (오른쪽에서 왼쪽으로 흐름) */
+.entry.clr .jan-partners {
+    padding-bottom: 60px;
+}
+
+.entry.clr .jan-marquee {
+    overflow: hidden;
+}
+
+.entry.clr .jan-track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    animation: jan-scroll 45s linear infinite;
+}
+
+.entry.clr .jan-track li {
+    flex: none;
+    margin: 0;
+    padding: 0 36px;
+    list-style: none;
+}
+
+.entry.clr .jan-track img {
+    display: block;
+    width: auto;
+    height: var(--h, 34px);
+    filter: grayscale(1);
+    opacity: 0.65;
+    mix-blend-mode: multiply;
+    transition: opacity 0.2s, filter 0.2s;
+}
+
+.entry.clr .jan-track li:hover img {
+    filter: none;
+    opacity: 1;
+}
+
+.entry.clr .jan-marquee:hover .jan-track {
+    animation-play-state: paused;
+}
+
+@keyframes jan-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .entry.clr .jan-track {
+        animation: none;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: auto;
+        row-gap: 20px;
+    }
+
+    .entry.clr .jan-track li[aria-hidden="true"] {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .entry.clr .jan-track li {
+        padding: 0 24px;
+    }
+
+    .entry.clr .jan-track img {
+        height: calc(var(--h, 34px) * 0.8);
+    }
+}
+
+/* PARTNERS 두 줄: 아랫줄은 반대 방향 */
+.entry.clr .jan-rowlabel {
+    display: block;
+    max-width: 1100px;
+    margin: 22px auto 10px;
+    padding: 0 20px;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    color: #666;
+}
+
+.entry.clr .jan-marquee.jan-rev .jan-track {
+    animation-direction: reverse;
+}
+
+/* PARTNERS 로고별 높이 (인라인 스타일 대신 클래스) */
+.entry.clr .jan-p-kbs {
+    --h: 30px;
+}
+
+.entry.clr .jan-p-mbc-plus {
+    --h: 30px;
+}
+
+.entry.clr .jan-p-channel-a {
+    --h: 36px;
+}
+
+.entry.clr .jan-p-mbn {
+    --h: 26px;
+}
+
+.entry.clr .jan-p-tving {
+    --h: 34px;
+}
+
+.entry.clr .jan-p-wavve {
+    --h: 32px;
+}
+
+.entry.clr .jan-p-samsung-tv-plus {
+    --h: 64px;
+}
+
+.entry.clr .jan-p-watcha {
+    --h: 22px;
+}
+
+.entry.clr .jan-p-kt-skylife {
+    --h: 34px;
+}
+
+.entry.clr .jan-p-sk-broadband {
+    --h: 40px;
+}
+
+.entry.clr .jan-p-choice {
+    --h: 28px;
+}
+
+.entry.clr .jan-p-bullsone {
+    --h: 28px;
+}
+
+.entry.clr .jan-p-seoul-tourism-organization {
+    --h: 38px;
+}
+
+.entry.clr .jan-p-korea-industrial-complex-corp {
+    --h: 34px;
+}
